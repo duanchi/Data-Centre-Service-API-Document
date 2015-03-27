@@ -1,29 +1,7 @@
 # Object Definition
 
 
-## 4.1.1. Response Object
 
-
-### Response Object
-
-`Class Response extend StdObject {}`
-
-> - service : enum              `服务名称`
-> - data : object(StdObject)[?] `数据对象`
-> - status : object(Status)     `状态对象`
-
-
-```
-object(Response) {
-    "data" : object() {}
-    "status" : object(Status) {
-        code : int(0),
-        message : string("success!"),
-        timestamp : float(1427259974.2252)
-    }
-}
-
-```
 
 
 ### Fusion_Response Object

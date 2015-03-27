@@ -1,70 +1,96 @@
-# 融合信息查询[^1]
+# 3.1.1. 融合信息服务[^1]
 
-> - 根据号码查询所属的沃家庭信息
+> - 根据号码或身份证号查询所属的融合信息
 > - 根据号码或身份证号查询相关号码信息
 
 
-## API说明
 
-### API名称
 
-cu.ecs.user-service.fusion
+## 3.1.1.1. API说明
 
-## API类型
+#### API名称
 
-用户信息服务
+> cu.ecs.user-service.fusion
 
-### 请求方式
+#### API类型
 
-WebService HTTP-GET
+> 用户信息服务
 
-## 数据格式
+#### 请求方式
 
-SOAP XML
+> WebService HTTP-GET
 
-## API 授权类型
+#### 数据格式
 
-需要授权
+> SOAP XML
 
-## 版本
+#### API 授权类型
 
-1.0.0
+> 需要授权
 
-### API URL
+#### 版本
 
-`http://DATA-API.SERV/user_service`
+> 1.0.0
 
-### API方法
+
+
+
+## 3.1.1.2. API URL
+
+> [http://DATA-API.SERV/user_service](http://DATA-API.SERV/user_service)
+
+
+
+
+## 3.1.1.3. API方法
 
 ```
-public function get_fusion(string user_number, enum[] scope = []) : object(Fusion_Response) {}
+public function get_fusion(string user, enum user_type, enum[] scope = []) : object(Fusion_Response) {}
 ```
 
-## 参数说明
 
-### 请求参数
 
-> -1. `string(11)` user_number
+## 3.1.1.4. 请求参数
 
-> 用户号码
+* ### user
 
-> -2. `enum[]` scope, (default : `[]`)
+> type :　`string(11 or 18)`
 
-> 融合类型范围定义，以数字下标数组填充查询范围，或填充空数组返回全部融合类型的查询结果
+> 用户号码或身份证号码
+
+> 用户号码可能为11位手机号码或11位区号+固定电话号码
+
+* ### scope
+
+> type : `enum[]`
+
+> default : `[]`
 
 > - `wo_family` 沃家庭
 > - `2` 沃享套餐
 > - `4` 其他融合套餐
 > - `[]` 返回用户全部已知融合类型查询结果
 
-### 应答对象
+> 融合类型范围定义，以数字下标数组填充查询范围，或填充空数组返回全部融合类型的查询结果
 
-> - object(Fusion_Response)         `融合信息应答对象`
 
-### 应答示例
+
+
+## 3.1.1.5. 应答对象
+
+> object(Fusion_Response)       `融合信息应答对象`
+
+>  对象内容参考 `4.1.1.5.`
+
+
+
+
+## 3.1.1.5. 应答示例
 
 ```
 object(Fusion_Response) {
+
+    "service" : enum("cu.ecs.user-service.fusion"),
     "data" : object(Fusion_Profile) {
         "wo_family" : object(WOFamily_Profile) {
             "product" : object(WOFamily_Product) {
@@ -76,12 +102,11 @@ object(Fusion_Response) {
             "slave" : [
                 object(User_Profile) {
                     "number" : string("186xxxxxxxx")
-                }
+                },
                 ...
             ]
         }
     }
-
     "status" : object(Status) {
         code : enum(0),
         message : string("success!"),
@@ -89,5 +114,5 @@ object(Fusion_Response) {
     }
 }
 ```
----
+----
 [^1]: 目前只支持沃家庭融合信息查询
