@@ -38,7 +38,7 @@ Class Fusion_Response extend Response {
 
 > desc : 融合信息服务请求应答的数据对象集合；当服务调用异常时，可以为空，查询成功时，集合长度可为0或1
 
-> value : see [4.1.4.1. Fusion_Data Object](/definition/fusion_data_object.html#4142-fusion_data-object)
+> value : see [4.1.4.1. Fusion_Data Object](/definition/fusion_data_object.html#4143-fusion_data-object)
 
 
 

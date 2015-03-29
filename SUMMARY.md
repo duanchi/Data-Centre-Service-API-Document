@@ -28,6 +28,7 @@
            * [WoFamily_Data Object](definition/wofamily_data_object.md)
    * [Enum Definition](definition/enum_definition.md)
        * [Service Enum](definition/service_enum.md)
+       * [Status Code Enum](definition/status_code_enum.md)
 * [Exception](exception/README.md)
 * [Additional](additional/README.md)
 * [Appendix](appendix/README.md)

@@ -23,7 +23,7 @@ Class Fusion_Data extend StdClass {
 
 > desc : 沃家庭融合服务信息对象
 
-> value : see [4.1.4.x WoFamily Data Object](/definition/wofamily_data_object.html#414x-wofamily_data-object)
+> value : see [4.1.4.x WoFamily_Data Object](/definition/wofamily_data_object.html#414x-wofamily_data-object)
 
 
 

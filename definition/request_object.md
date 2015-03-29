@@ -23,11 +23,9 @@ Class Request extend StdClass {
 
 > type :　`uuid`
 
-> desc : 当前应答的请求服务的名称
+> desc : 当前应答的请求唯一ID
 
-> value : 服务名称
-
-> 枚举值请参考 `4.2.1.`
+> value : 请求ID，使用UUID
 
 
 * #### service
@@ -36,9 +34,7 @@ Class Request extend StdClass {
 
 > desc : 当前应答的请求服务的名称
 
-> value : 服务名称
-
-> 枚举值请参考 `4.2.1.`
+> value : 服务名称，see [4.2.1. Status Code Enum](/definition/service_enum.html#421-service-enum)
 
 
 
