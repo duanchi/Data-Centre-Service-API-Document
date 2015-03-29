@@ -78,7 +78,7 @@ public function get_fusion(string user, enum user_type, enum[] scope = []) : obj
 
 ## 3.1.1.5. 应答对象
 
-> object(Fusion_Response)       `融合信息应答对象`
+> object(Fusion_Response)       `融合信息服务应答对象`
 
 >  对象内容参考 `4.1.1.5.`
 

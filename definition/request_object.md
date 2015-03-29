@@ -1,13 +1,19 @@
 # 4.1.1. Request Object
 
+> 服务请求对象
 
 
 
 ### 定义
 
-> Class Request extend StdObject {};
-
-
+---
+```
+Class Request extend StdClass {
+    public uuid request_id;
+    public enum service;
+};
+```
+---
 
 
 ### 属性
@@ -35,3 +41,12 @@
 > 枚举值请参考 `4.2.1.`
 
 
+
+### DUMP
+
+```
+object(Request) {
+        id : uuid(550e8400-e29b-41d4-a716-446655440000),
+        service : enum(cu.ecs.user-service.fusion)
+    }
+```

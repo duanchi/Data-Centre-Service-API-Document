@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        "customtheme"
+    ],
+    "pluginsConfig": {
+        "customtheme": {
+            "css": [
+                "_plugin/theme/css/font.css"
+            ],
+            "js": []
+        }
+    }
+}

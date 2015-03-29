@@ -1,0 +1,3 @@
+pre, code { font-family:Menlo, 'Open Sans', 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+code, pre { font-family:Menlo, Consolas, 'Liberation Mono', Menlo, Courier, monospace;}
+hr + pre, hr + pre > code { font-size: 1.6rem !important; line-height: 120% !important; font-family: Menlo, Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;}
