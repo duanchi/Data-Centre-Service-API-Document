@@ -7,6 +7,7 @@
 * [Authenticate](authenticate/README.md)
 * [API](api/README.md)
    * [User Service](api/user_service.md)
+       * [Profile](api/profile.md)
        * [Fusion](api/fusion.md)
        * [Group](api/group.md)
        * [Contract](api/contract.md)

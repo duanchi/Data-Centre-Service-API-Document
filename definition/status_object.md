@@ -38,13 +38,22 @@ Class Status extend StdClass {
 > value : 应答状态描述
 
 
+* #### timestamp
+
+> type :　`timestamp`
+
+> desc : 当前请求的服务器时间戳
+
+> value : 时间戳
+
 
 ### DUMP
 
 ```
-object(Request) {
-        id : uuid(550e8400-e29b-41d4-a716-446655440000),
-        service : enum(cu.ecs.user-service.fusion)
-    }
+"status" : object(Status) {
+    "code" : enum(0000),
+    "message" : string("success!"),
+    "timestamp" : timestamp(1427259974.2252)
+}
 ```
 

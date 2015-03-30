@@ -31,8 +31,10 @@ Class Fusion_Data extend StdClass {
 ### DUMP
 
 ```
-object(Fusion_profile) {
-    "wo_family" : object(WOFamily_Profile) {}
+object(Fusion_Data) {
+    "wo_family" : object(WoFamily_Data) {
+        ...
+    }
 }
 ```
 
