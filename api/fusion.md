@@ -104,12 +104,12 @@ public function get_fusion(
 
 > object(Fusion_Response)
 
->  融合信息服务应答对象，see [4.1.2.1. Fusion_Response Object](/definition/fusion_response_object.html#4121-fusion_response-object)
+>  融合信息服务应答对象，see [4.1.2.2. Fusion_Response Object](/definition/fusion_response_object.html#4122-fusion_response-object)
 
 
 
 
-## 3.1.2.5. 应答示例
+## 3.1.2.6. 应答示例
 
 ```
 object(Fusion_Response) {

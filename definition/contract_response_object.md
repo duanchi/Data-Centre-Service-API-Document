@@ -1,6 +1,6 @@
-# 4.1.2.2. Fusion_Response Object
+# 4.1.2.4. Contract_Response Object
 
-> 融合信息服务应答对象
+> 合约信息应答对象
 
 
 
@@ -8,9 +8,9 @@
 
 ---
 ```
-Class Fusion_Response extend Response {
+Class Contract_Response extend Response {
     public Request request;
-    public Fusion_Data[] data = [];
+    public Contract_Data[] data = NULL;
     public Status status;
 };
 ```
@@ -32,13 +32,13 @@ Class Fusion_Response extend Response {
 
 * #### data
 
-> type :　`object(Fusion_Data)[]`
+> type :　`object(Contract_Data)[]`
 
-> length: 0 ... 1
+> length: 0 ... n
 
-> desc : 融合信息服务请求应答的数据对象集合；当服务调用异常时，可以为空，查询成功时，集合长度可为0或1
+> desc : 合约信息服务请求应答的数据对象集合；当服务调用异常时，可以为空，查询成功时，集合长度可为0或n
 
-> value : see [4.1.4.3. Fusion_Data Object](/definition/fusion_data_object.html#4143-fusion_data-object)
+> value : see [4.1.4.5. Contract_Data Object](/definition/contract_data_object.html#4145-contract_data-object)
 
 
 
@@ -61,7 +61,7 @@ object(Response) {
         service : enum(cu.ecs.user-service.fusion)
     },
     "data" : [
-        object(Fusion_Data) {
+        object(Contract_Data) {
             ...
         }
     ],

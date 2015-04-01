@@ -1,14 +1,14 @@
-# 4.1.4.x. WoFamily_Data Object
+# 4.1.5.1. WoFamily_Resource Object
 
 
-> 沃家庭融合服务信息对象
+> 沃家庭融合服务资源对象
 
 
 ### 定义
 
 ---
 ```
-Class WoFamily_Data extend StdClass {
+Class WoFamily_Resource extend StdClass {
     public Product_Data product;
     public User_Data master;
     public User_data[] members;
@@ -60,18 +60,18 @@ Class WoFamily_Data extend StdClass {
 
 > type :　`enum`
 
-> desc : 当前沃家庭信息归属省
+> desc : 当前沃家庭业务的所属省
 
-> value : 归属省
+> value : 所属省，see [B-SDM Provice Code](/appendix/b-sdm_code.html/#province-code)
 
 
 * #### city
 
-> type :　`datetime`
+> type :　`enum`
 
-> desc : 当前沃家庭信息归属地市
+> desc : 当前沃家庭业务的所属地市
 
-> value : 归属地市
+> value : 所属地市，see [B-SDM City Code](/appendix/b-sdm_code.html/#city-code)
 
 
 * #### accept_time
@@ -120,6 +120,8 @@ Class WoFamily_Data extend StdClass {
 
 > desc : 当前沃家庭号码组是否有效
 
+> value :
+
 > - `TRUE` 有效
 
 > - `FALSE` 无效
@@ -129,7 +131,7 @@ Class WoFamily_Data extend StdClass {
 ### DUMP
 
 ```
-object(WoFamily_Data) {
+object(WoFamily_Resource) {
     "product" : object(Product_Data) {
         ...
     },

@@ -176,37 +176,6 @@ object(User_Profile) {
 
 
 
-
-
-### Group_Profile Object
-
-`Class Group_Profile extend StdClass {}`
-
-> - product(Mygroup_Product)   `集团产品信息`
->   - name(string)               `集团名称`
-> - master(User_Profile)        `主付费对象`
-> - pay_type(enum)              `付费类型`
-
-
-```
-object(Mygroup_Profile) {
-    "product" : object(Mygroup_Product) {
-        "name" : string("中国联通集团"),
-    },
-    "master": object(User_Profile) {},
-    "pay_type" :enum(1)
-}
-
-### Contract_Profile Object
-
-`Class Contract_Profile extend StdClass {}`
-
-> - 1(MyContract_Profile ?)       `集团对象`
-> - 2(NULL)
-> - 4(NULL)
-
-
-```
 object(MyContract_Profile) {
     "1" : object(MyContract_Profile) {}
 }

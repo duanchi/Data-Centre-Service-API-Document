@@ -1,4 +1,4 @@
-# 4.1.4.2. Fusion_Data Object
+# 4.1.4.3. Fusion_Data Object
 
 > 融合信息服务数据对象
 
@@ -8,7 +8,7 @@
 ---
 ```
 Class Fusion_Data extend StdClass {
-    public WoFamily_Data wo_famliy = NULL;
+    public WoFamily_Resource wo_famliy = NULL;
 };
 ```
 ---
@@ -19,11 +19,11 @@ Class Fusion_Data extend StdClass {
 
 * #### wo_famliy
 
-> type :　`object(WoFamily_Data)`
+> type :　`object(WoFamily_Resource)`
 
 > desc : 沃家庭融合服务信息对象
 
-> value : see [4.1.4.x WoFamily_Data Object](/definition/wofamily_data_object.html#414x-wofamily_data-object)
+> value : see [4.1.5.1 WoFamily_Resource Object](/definition/wofamily_resource_object.html#4151-wofamily_resource-object)
 
 
 
@@ -32,7 +32,7 @@ Class Fusion_Data extend StdClass {
 
 ```
 object(Fusion_Data) {
-    "wo_family" : object(WoFamily_Data) {
+    "wo_family" : object(WoFamily_Resource) {
         ...
     }
 }

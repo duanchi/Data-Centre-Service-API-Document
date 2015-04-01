@@ -1,82 +1,95 @@
-# 合约信息查询
+# 3.1.4. 合约信息查询服务
 
 > - 根据号码查询合约计划信息
 
 
 
-## API说明
+## 3.1.4.1. API说明
 
-### API名称
+#### API名称
 
-cu.ecs.user-profile.contract-profile
+> cu.ecs.user-service.contract
 
-## API类型
+#### API类型
 
-用户信息服务
+> 用户信息服务
 
-### 请求方式
+#### 请求方式
 
-WebService HTTP-GET
+> WebService HTTP-GET
 
-## 数据格式
+#### 数据格式
 
-SOAP XML
+> SOAP XML
 
-## API 授权类型
+#### API 授权类型
 
-需要授权
+> 需要授权
 
-## 版本
+#### 版本
 
-1.0.0
+> 1.0.0
 
-### API URL
 
-`http://DATA-API.SERV/user_profile`
+## 3.1.4.2. API URL
 
-### API方法
-
-```
-public  get_contract_profile(string user_number) : object(Contract_Profile_Response) {}
-```
-
-## 参数说明
+> [http://DATA-API.SERV/user_service](http://DATA-API.SERV/user_service)
 
 
 
-### 请求参数
 
-> -1. `string(11+)` user_number
-
-> 用户号码
-
-
-
-### 应答对象
-
-> - object(Contract_Profile_Response)         `合约信息应答对象`
-
-### 应答示例
+## 3.1.4.3. API方法
 
 ```
-object(Response) {
-    "data" : object(Contract_Profile) {
-        "1" : object(MyContract_Profile) {
-            "product" : object(Mycontract_Product) {
-                "name" : string("iPhone 96元合约套餐"),
-            },
-            "statime": Datetime(xxxx-xx-xx),
-            "endtime": Datetime(xxxx-xx-xx),
-        }
+public function get_contract(string user) : object(Contract_Response) {}
+```
+
+
+
+## 3.1.4.4. 请求参数
+
+
+* #### user
+
+> type :　`string`
+
+> length : 11
+
+> desc : 当前查询用户的用户号码
+
+> value : 用户号码
+
+
+
+
+
+## 3.1.4.5. 应答对象
+
+> object(Contract_Response)
+
+>  合约信息应答对象，see [4.1.2.4. Contract_Response Object](/definition/contract_response_object.html#4124-contract_response-object)
+
+
+
+
+## 3.1.4.6. 应答示例
+
+```
+object(Contract_Response) {
+
+    "request" : object(Request) {
+        id : uuid(550e8400-e29b-41d4-a716-446655440000),
+        service : enum(cu.ecs.user-service.fusion)
+    },
+    object(Contract_Data) {
+        ...
     }
-
     "status" : object(Status) {
-        code : enum(0),
+        code : enum(0000),
         message : string("success!"),
-        timestamp : float(1427259974.2252)
+        timestamp : timestamp(1427259974.2252)
     }
 }
 ```
----
 
 

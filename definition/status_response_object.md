@@ -1,6 +1,6 @@
-# 4.1.2.2. Fusion_Response Object
+# 4.1.2.5. Status_Response Object
 
-> 融合信息服务应答对象
+> 用户在网状态信息应答对象
 
 
 
@@ -8,9 +8,9 @@
 
 ---
 ```
-Class Fusion_Response extend Response {
+Class Status_Response extend Response {
     public Request request;
-    public Fusion_Data[] data = [];
+    public Status_Data[] data = NULL;
     public Status status;
 };
 ```
@@ -32,13 +32,13 @@ Class Fusion_Response extend Response {
 
 * #### data
 
-> type :　`object(Fusion_Data)[]`
+> type :　`object(Status_Data)[]`
 
-> length: 0 ... 1
+> length: 0 ... n
 
-> desc : 融合信息服务请求应答的数据对象集合；当服务调用异常时，可以为空，查询成功时，集合长度可为0或1
+> desc : 用户在网状态信息对象集合；当服务调用异常时，可以为空，查询成功时，集合长度可为0或n
 
-> value : see [4.1.4.3. Fusion_Data Object](/definition/fusion_data_object.html#4143-fusion_data-object)
+> value : see [4.1.4.6. Status_Data Object](/definition/status_data_object.html#4146-status_data-object)
 
 
 
@@ -55,13 +55,13 @@ Class Fusion_Response extend Response {
 ### DUMP
 
 ```
-object(Response) {
+object(Status_Response) {
     "request" : object(Request) {
         id : uuid(550e8400-e29b-41d4-a716-446655440000),
         service : enum(cu.ecs.user-service.fusion)
     },
     "data" : [
-        object(Fusion_Data) {
+        object(Status_Data) {
             ...
         }
     ],
