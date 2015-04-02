@@ -118,11 +118,13 @@ object(Fusion_Response) {
         id : uuid(550e8400-e29b-41d4-a716-446655440000),
         service : enum(cu.ecs.user-service.fusion)
     },
-    object(Fusion_Data) {
-        "wo_family" : object(WoFamily_Data) {
-            ...
+    "data" : [
+        object(Fusion_Data) {
+            "wo_family" : object(WoFamily_Data) {
+                ...
+            }
         }
-    }
+    ],
     "status" : object(Status) {
         code : enum(0000),
         message : string("success!"),

@@ -1,95 +1,132 @@
-# 终端信息查询[^1]
+# 3.3.1. 用户终端使用信息查询服务[^1]
 
 > - 根据号码查询终端情况
 
 
 
-## API说明
+## 3.3.1.1. API说明
 
-### API名称
+#### API名称
 
-cu.ecs.user-service.terminal
+> cu.ecs.extend-service.terminal
 
-### API类型
+#### API类型
 
-扩展信息服务
+> 用户信息服务
 
-### 请求方式
+#### 请求方式
 
-WebService HTTP-GET
+> WebService HTTP-GET
 
-### 数据格式
+#### 数据格式
 
-SOAP XML
+> SOAP XML
 
-### API 授权类型
+#### API 授权类型
 
-需要授权
+> 需要授权
 
-### 版本
+#### 版本
 
-1.0.0
+> 1.0.0
 
-## API URL
 
-`http://DATA-API.SERV/extend_service`
+## 3.3.1.2. API URL
 
-## API方法
+> [http://DATA-API.SERV/extend_service](http://DATA-API.SERV/extend_service)
+
+
+
+
+## 3.3.1.3. API方法
 
 ```
-public function get_terminal(string user_number, enum scope = 0, date start = NULL, date end = NULL) : object(Terminal_Response) {}
+public function get_terminal(string user, enum scope = CURRENT, date start = NULL, date end = NULL) : object(Terminal_Response) {}
 ```
 
-### 参数说明
 
-### 请求参数
 
-> -1. `string(11)` user_number
+## 3.3.1.4. 请求参数
 
-> 用户号码
 
-> -2. `enum` scope, (default : `0`)
+* #### user
+
+> type :　`string`
+
+> length : 11
+
+> desc : 当前查询用户的用户号码
+
+> value : 用户号码
+
+
+* #### scope
+
+> type :　`enum`
+
+> desc : 范围定义
+
+> value :
+
+> - `CURRENT` 只返回当前或最后一次使用的终端
+
+> - `ALL` 返回用户所有使用过的终端
+
+> - `INTERVAL` 按照时间区间返回使用过的终端列表
 
 > 范围定义
 
-> - `0` 只返回当前或最后一次使用的终端
-> - `1` 返回用户所有使用过的终端
-> - `2` 按照时间区间返回使用过的终端列表
 
-> -3. `date` start, (default : `NULL`)
+* #### start
 
-> 开始日期
+> type :　`datetime`
 
-> -4. `date` end, (default : `NULL`)
+> desc : 开始日期
 
-> 结束日期
+> value : 开始日期
 
 
-### 应答对象
+* #### end
 
-> - object(Terminal_Response)         `终端信息应答对象`
+> type :　`datetime`
 
-### 应答示例
+> desc : 结束日期
+
+> value : 结束日期
+
+
+
+## 3.3.1.5. 应答对象
+
+> object(Terminal_Response)
+
+>  用户使用终端信息应答对象，see [4.1.2.6. Terminal_Response Object](/definition/terminal_response_object.html#4126-terminal_response-object)
+
+
+
+
+## 3.3.1.6. 应答示例
 
 ```
 object(Terminal_Response) {
+
+    "request" : object(Request) {
+        id : uuid(550e8400-e29b-41d4-a716-446655440000),
+        service : enum(cu.ecs.user-service.fusion)
+    },
     "data" : [
-        object(Terminal_Profile) {
-            "imei" : string("xxxxxxxxxxxxx"),
-            "phone" : object(Phone_Profile) {
-                "manufacturer" : string("Apple."),
-                "model" : string("6,A1597")
-            },
-            "start_time" : date("2015-01-12")
+        object(Terminal_Data) {
+            ...
         }
     ],
-
     "status" : object(Status) {
-        code : enum(0),
+        code : enum(0000),
         message : string("success!"),
-        timestamp : float(1427259974.2252)
+        timestamp : timestamp(1427259974.2252)
     }
 }
 ```
+
+
 ---
 [^1]: 只支持3年内用户终端信息查询

@@ -81,9 +81,10 @@ object(Contract_Response) {
         id : uuid(550e8400-e29b-41d4-a716-446655440000),
         service : enum(cu.ecs.user-service.fusion)
     },
-    object(Contract_Data) {
-        ...
-    }
+    "data" : [object(Contract_Data) {
+            ...
+        }
+    ],
     "status" : object(Status) {
         code : enum(0000),
         message : string("success!"),

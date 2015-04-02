@@ -1,92 +1,93 @@
-# 社交帐号信息查询
+# 3.3.1. 社交帐号信息查询服务[^1]
 
 > - 根据号码查询对应的微博、微信、QQ等账号
 
 
 
-## API说明
+## 3.3.1.1. API说明
 
-### API名称
+#### API名称
 
-cu.ecs.user-service.social
+> cu.ecs.extend-service.social
 
-### API类型
+#### API类型
 
-扩展信息服务
+> 用户信息服务
 
-### 请求方式
+#### 请求方式
 
-WebService HTTP-GET
+> WebService HTTP-GET
 
-### 数据格式
+#### 数据格式
 
-SOAP XML
+> SOAP XML
 
-### API 授权类型
+#### API 授权类型
 
-需要授权
+> 需要授权
 
-### 版本
+#### 版本
 
-1.0.0
+> 1.0.0
 
-## API URL
 
-`http://DATA-API.SERV/extend_service`
+## 3.3.1.2. API URL
 
-## API方法
+> [http://DATA-API.SERV/extend_service](http://DATA-API.SERV/extend_service)
+
+
+
+
+## 3.3.1.3. API方法
 
 ```
-public function get_social(string user_number, enum[] scope = []) : object(Social_Response) {}
+public function get_social(string user) : object(Social_Response) {}
 ```
 
-### 参数说明
-
-### 请求参数
-
-> -1. `string(11)` user_number
-
-> 用户号码
-
-> -2. `enum[]` scope, (default : `[]`)
-
-> 范围定义，以数字下标数组填充查询范围，或填充空数组返回全部查询范围
-
-> - `weibo` 返回用户微博帐号信息
-> - `wechat` 返回用户微信帐号信息
-> - `qq` 返回用户QQ帐号信息
-> - `[]` 返回用户全部已知社交帐号
 
 
-### 应答对象
+## 3.3.1.4. 请求参数
 
-> - object(Social_Response)             `社交帐号信息应答对象`
 
-### 应答示例
+* #### user
+
+> type :　`string`
+
+> length : 11
+
+> desc : 当前查询用户的用户号码
+
+> value : 用户号码
+
+
+
+## 3.3.1.5. 应答对象
+
+> object(Social_Response)
+
+>  社交帐号信息查询服务应答对象，see [4.1.2.7. Social_Response Object](/definition/social_response_object.html#4127-social_response-object)
+
+
+
+
+## 3.3.1.6. 应答示例
 
 ```
 object(Social_Response) {
-    "data" : object(Social_Profile) {
-        "weibo" : object(Weibo_Profile) {
-            "scope" : enum("weibo"),
-            "user" : string("07.duanchi@gmail.com"),
-            "homepage" : string("weibo.com/shijingye"),
-        },
-        "wechat" : object(Wechat_Profile) {
-            "scope" : enum("wechat"),
-            "user" : string("68661364")
-        },
-        "qq" : object(Qq_Profile) {
-            "scope" : enum("qq"),
-            "user" : string("68661364")
-        }
-    },
 
+    "request" : object(Request) {
+        id : uuid(550e8400-e29b-41d4-a716-446655440000),
+        service : enum(cu.ecs.user-service.fusion)
+    },
+    "data" : [
+        object(Social_Response) {
+            ...
+        }
+    ],
     "status" : object(Status) {
-        code : enum(0),
+        code : enum(0000),
         message : string("success!"),
-        timestamp : float(1427259974.2252)
+        timestamp : timestamp(1427259974.2252)
     }
 }
 ```
----

@@ -68,11 +68,11 @@ public function get_status(string user, enum scope = CURRENT, date start = NULL,
 
 > value :
 
-> - `CURRENT` 只返回当前或最后一次使用的终端
+> - `CURRENT` 只返回当前或最后一次在网情况
 
-> - `ALL` 返回用户所有使用过的终端
+> - `ALL` 返回用户所有在网、离网情况
 
-> - `INTERVAL` 按照时间区间返回使用过的终端列表
+> - `INTERVAL` 按照时间区间返回用户在网、离网情况
 
 > 范围定义
 
@@ -114,9 +114,11 @@ object(Status_Response) {
         id : uuid(550e8400-e29b-41d4-a716-446655440000),
         service : enum(cu.ecs.user-service.fusion)
     },
-    object(Status_Data) {
-        ...
-    }
+    "data" : [
+        object(Status_Data) {
+            ...
+        }
+    ],
     "status" : object(Status) {
         code : enum(0000),
         message : string("success!"),

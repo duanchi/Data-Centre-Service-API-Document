@@ -1,4 +1,4 @@
-# 4.1.4.5. Status_Data Object
+# 4.1.4.6. Status_Data Object
 
 
 > 用户在网状态信息对象
@@ -35,7 +35,7 @@ Class Status_Data extend StdClass {
 
 > type :　`object(Product_Data)`
 
-> desc : 当前当前用户所用产品信息对象
+> desc : 当前用户所用产品信息对象
 
 > value : see [4.1.4.2 Product_Data Object Object](/definition/product_data_object.html#4142-product_data-object)
 
@@ -66,7 +66,7 @@ Class Status_Data extend StdClass {
 
 > type :　`datetime`
 
-> desc : 当前用离网时间
+> desc : 当前用户离网时间
 
 > value : 离网时间
 

@@ -1,4 +1,4 @@
-# 4.1.5.2 Contract_Resource Object
+# 4.1.5.2. Contract_Resource Object
 
 
 > 合约计划资源对象
