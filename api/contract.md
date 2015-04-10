@@ -41,7 +41,7 @@
 ## 3.1.4.3. API方法
 
 ```
-public function get_contract(string user) : object(Contract_Response) {}
+public function get_contract(string user, user_type = USER_NUMBER) : object(Contract_Response) {}
 ```
 
 
@@ -53,11 +53,24 @@ public function get_contract(string user) : object(Contract_Response) {}
 
 > type :　`string`
 
-> length : 11
+> length : 11 or 18
 
-> desc : 当前查询用户的用户号码
+> desc : 当前查询用户的用户号码或身份证号码
 
-> value : 用户号码
+> value : 用户号码或身份证号码
+
+
+* #### user_type
+
+> type :　`enum`
+
+> desc : 当前沃家庭成员号码信息集合
+
+> value :
+
+> - `USER_NUMBER` 用户号码
+
+> - `ID_CARD` 身份证号码
 
 
 
